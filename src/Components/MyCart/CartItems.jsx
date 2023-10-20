@@ -1,0 +1,65 @@
+import { useState } from "react";
+import Swal from "sweetalert2";
+
+const CartItems = ({ item, products, setProducts }) => {
+    const { _id, image, name, brand, type, price } = item;
+    console.log(_id);
+
+    const handleDelete = () => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/delete/${_id}`, {
+                    method: "DELETE",
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            );
+                            const remaining = products.filter(iid => iid._id !== _id);
+                            setProducts(remaining);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error deleting product:', error);
+                        Swal.fire(
+                            'Error!',
+                            'An error occurred while deleting the product.',
+                            'error'
+                        );
+                    });
+            }
+        })
+    }
+
+    return (
+        <div className="">
+            <div className="flex justify-center">
+                <div className="card w-72 md:w-96 bg-fuchsia-200 shadow-xl">
+                    <img className="w-full h-72 rounded-t-xl" src={image} alt="" />
+                    <div className="text-center">
+                        <h1 className="text-2xl text-fuchsia-800 m-4 font-bold">{name}</h1>
+                        <h1 className="text-xl text-fuchsia-700 font-bold">Brand: {brand}</h1>
+                        <h1 className="text-fuchsia-700 text-lg font-bold">Type: {type}</h1>
+                        <h1 className="text-fuchsia-700 text-lg font-bold">Price: {price}</h1>
+                    </div>
+                    <button onClick={handleDelete} className="btn btn-secondary px-4 lg:px-10 mt-4 rounded-t-none normal-case text-base">Delete</button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default CartItems;
+

@@ -1,5 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import Card from "./Card";
+import Discount from "./Discount";
+import Features from "./Features";
 import Header from "./Header";
 
 const Home = () => {
@@ -8,6 +10,8 @@ const Home = () => {
             <Navbar></Navbar>
             <Header></Header>
             <Card></Card>
+            <Discount></Discount>
+            <Features></Features>
         </div>
     );
 };
