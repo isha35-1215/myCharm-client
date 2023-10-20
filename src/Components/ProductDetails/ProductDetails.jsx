@@ -37,12 +37,12 @@ const ProductDetails = () => {
     return (
         <div>
 <Navbar></Navbar>
-            <div className="max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto py-10" key={product._id}> {/* Don't forget to add a "key" prop */}
+            <div className="max-w-2xl md:max-w-4xl lg:max-w-6xl mx-12 lg:mx-auto py-10" key={product._id}> {/* Don't forget to add a "key" prop */}
                 <div className="w-full rounded-md bg-cover bg-center">
                     <img
                         src={product.image}
                         alt={product.name}
-                        className="rounded-md w-1/3 h-1/12 object-cover"
+                        className="rounded-md w-1/2 lg:w-1/3 h-1/6 lg:h-1/12 object-cover"
                     />
                 </div>
                 <div className="text-neutral-content">
