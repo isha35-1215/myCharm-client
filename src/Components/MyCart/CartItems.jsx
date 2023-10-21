@@ -1,11 +1,12 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import Swal from "sweetalert2";
 
 const CartItems = ({ item, products, setProducts }) => {
+
     const { _id, image, name, brand, type, price } = item;
     console.log(_id);
 
-    const handleDelete = () => {
+    const handleDelete = id => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -27,18 +28,20 @@ const CartItems = ({ item, products, setProducts }) => {
                                 'Your file has been deleted.',
                                 'success'
                             );
-                            const remaining = products.filter(iid => iid._id !== _id);
+                            const remaining = products.filter(product => product._id != id);
+                            console.log(remaining);
+                            console.log(id);
                             setProducts(remaining);
                         }
                     })
-                    .catch(error => {
-                        console.error('Error deleting product:', error);
-                        Swal.fire(
-                            'Error!',
-                            'An error occurred while deleting the product.',
-                            'error'
-                        );
-                    });
+                    // .catch(error => {
+                    //     console.error('Error deleting product:', error);
+                    //     Swal.fire(
+                    //         'Error!',
+                    //         'An error occurred while deleting the product.',
+                    //         'error'
+                    //     );
+                    // });
             }
         })
     }
@@ -54,7 +57,7 @@ const CartItems = ({ item, products, setProducts }) => {
                         <h1 className="text-fuchsia-700 text-lg font-bold">Type: {type}</h1>
                         <h1 className="text-fuchsia-700 text-lg font-bold">Price: {price}</h1>
                     </div>
-                    <button onClick={handleDelete} className="btn btn-secondary px-4 lg:px-10 mt-4 rounded-t-none normal-case text-base">Delete</button>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-secondary px-4 lg:px-10 mt-4 rounded-t-none normal-case text-base">Delete</button>
                 </div>
             </div>
         </div>
