@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Card = () => {
 
 
-    
+    useEffect(() => {
+        AOS.init();
+    }, [])
 
 
     const handleAddBrand = event => {
@@ -53,12 +56,12 @@ const Card = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-6 px-12 md:px-20 lg:px-24">
                 {cards.map((cart) => (
                     <Link to={`/products/${cart.brand}`} key={cart._id}>
-                        <div className="card w-72 md:w-96 bg-fuchsia-200 shadow-xl">
+                        <div data-aos="zoom-in" className="card w-72 md:w-96 bg-fuchsia-200 shadow-xl">
                             <figure className="px-6 pt-6">
                                 <img src={cart.image} alt={cart.brand} className="h-72 w-80 rounded-xl" />
                             </figure>
                             <div className="card-body items-center">
-                                <button className="card-title text-fuchsia-800">{cart.brand}</button>
+                                <button className="card-title text-2xl text-fuchsia-800">{cart.brand}</button>
                             </div>
                         </div>
                     </Link>

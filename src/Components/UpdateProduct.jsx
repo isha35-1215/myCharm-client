@@ -1,5 +1,4 @@
 import { useLoaderData, useParams } from "react-router-dom";
-
 import swal from "sweetalert";
 import Navbar from "./Navbar/Navbar";
 
@@ -74,7 +73,11 @@ const UpdateProduct = () => {
                         <select name="brand" defaultValue={brand} className="select select-bordered border-fuchsia-600 w-full max-w-xs">
                             <option disabled selected>Select Brand</option>
                             <option>Dior</option>
-                            <option>Greedo</option>
+                            <option>Revlon</option>
+                            <option>Avon</option>
+                            <option>Chanel</option>
+                            <option>Enchanteur</option>
+                            <option>L'Oréal</option>
                         </select>
                     </div>
                     {/* type input */}
@@ -95,15 +98,6 @@ const UpdateProduct = () => {
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
-                            <span className="label-text">Short description</span>
-                        </label>
-                        <input type="text" name="description" placeholder="" defaultValue={description} className="input input-bordered border-fuchsia-600 w-full max-w-xs" />
-                    </div>
-                </div>
-                {/* rating input field */}
-                <div className=" mb-6 flex flex-col lg:flex-row gap-4 justify-center items-center" >
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label">
                             <span className="label-text">Rating
                             </span>
                         </label>
@@ -115,6 +109,16 @@ const UpdateProduct = () => {
                             <option>4</option>
                             <option>5</option>
                         </select>                    
+                    </div>
+                </div>
+                {/* rating input field */}
+                <div className=" mb-6 flex flex-col lg:flex-row gap-4 justify-center items-center" >
+                    
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Short description</span>
+                        </label>
+                        <input type="text" name="description" placeholder="" defaultValue={description} className="input input-bordered border-fuchsia-600 w-full max-w-xs" />
                     </div>
                     <div className="form-control w-full max-w-xs ">
                         <label className="label">

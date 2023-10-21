@@ -1,5 +1,4 @@
 import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
 import swal from "sweetalert";
 
 
@@ -62,10 +61,11 @@ const AddProduct = () => {
                         <select name="brand"  className="select select-bordered border-fuchsia-600 w-full max-w-xs">
                             <option disabled selected>Select Brand</option>
                             <option>Dior</option>
-                            <option>avon</option>
-                            <option>Greedo</option>
-                            <option>Greedo</option>
-                            <option>Greedo</option>
+                            <option>Revlon</option>
+                            <option>Avon</option>
+                            <option>Chanel</option>
+                            <option>Enchanteur</option>
+                            <option>L'Oréal</option>
                         </select>
                     </div>
                     <div className="form-control w-full max-w-xs">
@@ -98,23 +98,22 @@ const AddProduct = () => {
                         </select>   
                     </div>
                 </div>
-                <div className=" mb-6 flex w-full lg:px-[453px] flex-col gap-4 justify-center items-center" >
-                    <div className="form-control w-full ">
+                <div className=" mb-6 flex flex-col lg:flex-row gap-4 justify-center items-center" >
+                    <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Short description</span>
                         </label>
                         <input type="text" name="description" placeholder="" className="input input-bordered border-fuchsia-600 w-full" />
                     </div>
-                    <div className="form-control w-full  ">
+                    <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text"></span>
                         </label>
 
-                        <input type="submit" value='Add Product' className=" mt-4  btn btn-primary bg-fuchsia-700 border-fuchsia-700 text-white normal-case " />
+                        <input type="submit" value='Add Product' className="mt-4  btn btn-primary bg-fuchsia-700 border-fuchsia-700 text-white normal-case " />
                     </div>
                 </div>
             </form>
-            <Footer></Footer>
 
         </div>
     );

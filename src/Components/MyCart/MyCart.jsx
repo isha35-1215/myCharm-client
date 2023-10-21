@@ -11,6 +11,7 @@ const MyCart = () => {
     return (
         <div>
             <Navbar />
+            <h2 className="text-center text-fuchsia-700 text-4xl font-bold mt-5 mb-5">My Cart</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 my-10 mx-auto">
                 {products.map(item => 
                     <CartItems 

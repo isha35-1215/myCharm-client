@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ oneProduct }) => {
   return (
-    <div>
+    <div className="">
       <div className="flex justify-center">
         <div className="card w-72 md:w-96 bg-fuchsia-200 shadow-xl">
           <img className=" w-full h-72 rounded-t-xl" src={oneProduct.image} alt="" />
@@ -11,7 +11,7 @@ const ProductCard = ({ oneProduct }) => {
             <h1 className="text-2xl text-fuchsia-800 m-4 font-bold">{oneProduct.name}</h1>
             <h1 className="text-xl text-fuchsia-700 font-bold">Brand: {oneProduct.brand}</h1>
             <h1 className="text-fuchsia-700 text-lg font-bold">Type: {oneProduct.type}</h1>
-            <h1 className="text-fuchsia-700 text-lg font-bold">Price: {oneProduct.price}</h1>
+            <h1 className="text-fuchsia-700 text-lg font-bold">Price: ${oneProduct.price}</h1>
             <div className="flex justify-center">
               <span className="text-fuchsia-700 text-lg font-bold">Rating: </span>
               {Array.from({ length: 5 }).map((_, index) => {
