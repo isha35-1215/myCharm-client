@@ -19,4 +19,4 @@ live-link:
 
 **Dynamic Cart Rendering:** The MyCart component dynamically renders cart items fetched from a server, displaying each item's relevant details, including the image, name, brand, type, and price, in a visually appealing format.
 
-**Authentication Methods:** The Login component allows users to authenticate using both email/password and Google sign-in. Users can choose their preferred method for logging into the application, enhancing accessibility and user convenience.
+**Private Route:** Private route employs the useContext hook to access the authentication context and the useLocation hook to retrieve the current location. If the authentication status is still loading, it displays a loading spinner. Once the authentication status is determined, if the user is authenticated, it renders the children components representing the protected content. Conversely, if the user is not authenticated, it redirects the user to the login page, storing the current location in the state to enable redirection after successful login.
