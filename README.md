@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 
 website name: MyCharm
-live-link:
+live-link:https://brand-shop-client-749d6.web.app
 
 **Clickable Brand Cards:** Each brand card in the Card component is clickable and redirects the user to a specific route, allowing them to view all products associated with the selected brand.
 

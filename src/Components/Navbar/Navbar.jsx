@@ -38,7 +38,7 @@ const Navbar = () => {
     return (
 
         <div className={`bg-base-100 my-4 max-w-screen-sm md:max-w-screen-md lg:max-w-screen-xl mx-auto font-poppins`} data-theme={theme}>
-        <div className="navbar justify-between bg-base-100 rounded-xl mt-4">
+        <div className="navbar justify-between rounded-xl mt-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

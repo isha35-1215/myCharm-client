@@ -24,7 +24,7 @@ const UpdateProduct = () => {
         console.log(productData);
 
 
-        fetch(`http://localhost:5000/updateProduct/${id}`, {
+        fetch(`https://b8a10-brandshop-server-side-isha35-1215.vercel.app/updateProduct/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

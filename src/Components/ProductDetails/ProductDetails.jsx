@@ -14,7 +14,7 @@ const ProductDetails = () => {
 
         
 
-        fetch(`http://localhost:5000/cart`, {
+        fetch(`https://b8a10-brandshop-server-side-isha35-1215.vercel.app/cart`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

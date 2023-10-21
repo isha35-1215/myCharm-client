@@ -16,7 +16,7 @@ const Card = () => {
         const image = form.image.value;
         const brand = form.brand.value;
         const brandData = { image, brand }
-        fetch("http://localhost:5000/brands", {
+        fetch("https://b8a10-brandshop-server-side-isha35-1215.vercel.app/brands", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -32,7 +32,7 @@ const Card = () => {
 
     useEffect(() => {
         // Use the correct path to your JSON file.
-        fetch("http://localhost:5000/brands")
+        fetch("https://b8a10-brandshop-server-side-isha35-1215.vercel.app/brands")
             .then((res) => res.json())
             .then((data) => setCards(data));
     }, []);
